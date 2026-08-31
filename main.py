@@ -4,7 +4,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 app = FastAPI()
 
 # MongoDB Atlas Bağlantı Adresin (Doğrudan Koda Ekli)
-MONGO_URL = "mongodb+srv://realsaatyilmaz:123456@yilmazbrawl.mtjhdek.mongodb.net/?appName=YilmazBrawl"
+MONGO_URL = "mongodb+srv://realsaatyilmaz:Yilmaz1234@yilmazbrawl.mtjhdek.mongodb.net/?appName=YilmazBrawl"
 
 client = AsyncIOMotorClient(
     MONGO_URL,
