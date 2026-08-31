@@ -1,12 +1,18 @@
 from fastapi import FastAPI, Request
 from motor.motor_asyncio import AsyncIOMotorClient
-import os
 
 app = FastAPI()
 
-# Render ortamındaki MONGO_URL değişkenini okur
-MONGO_URL = os.getenv("MONGO_URL")
-client = AsyncIOMotorClient(MONGO_URL)
+# MongoDB Atlas Bağlantı Adresin (Doğrudan Koda Ekli)
+MONGO_URL = "mongodb+srv://realsaatyilmaz:123456@yilmazbrawl.mtjhdek.mongodb.net/?appName=YilmazBrawl"
+
+client = AsyncIOMotorClient(
+    MONGO_URL,
+    tls=True,
+    tlsAllowInvalidCertificates=True,
+    serverSelectionTimeoutMS=5000
+)
+
 db = client["my_firebase"]
 collection = db["store"]
 
